@@ -1,0 +1,15 @@
+[Unit]
+Description=Copernicus IES Applicant Bot
+After=network.target
+
+[Service]
+Type=simple
+User=CHANGE_ME
+WorkingDirectory=/home/CHANGE_ME/Copernicus_bot
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/home/CHANGE_ME/Copernicus_bot/venv/bin/python -m bot
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

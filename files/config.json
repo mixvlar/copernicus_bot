@@ -1,0 +1,33 @@
+{
+  "channels_to_subscribe": [
+    -1003483466205
+  ],
+  "admins": [
+    8702067545
+  ],
+  "apply_url": "https://campus.copernicusberlin.org/",
+  "privacy_url": "https://copernicusberlin.org/privacy-policy/",
+  "channel_url": "https://t.me/portfolio_for_copernicus_berlin",
+  "bot_username": "CopernicusBerlin_bot",
+  "sources": [
+    "ig",
+    "yt",
+    "tg",
+    "vk",
+    "tiktok",
+    "li",
+    "fb",
+    "direct"
+  ],
+  "socials": {
+    "📷 Instagram": "https://www.instagram.com/copernicusberlin",
+    "▶️ YouTube": "https://www.youtube.com/c/copernicusberlin",
+    "✈️ Telegram": "https://t.me/copernicusberlin",
+    "🎵 TikTok": "https://www.tiktok.com/@copernicusberlin",
+    "💼 LinkedIn": "https://de.linkedin.com/company/copernicusberlin",
+    "📘 Facebook": "https://www.facebook.com/CopernicusBerlin/",
+    "🐦 Twitter": "https://twitter.com/copberlin",
+    "🔵 VK": "https://vk.com/copernicusberlin",
+    "🌐 copernicusberlin.org": "https://copernicusberlin.org"
+  }
+}

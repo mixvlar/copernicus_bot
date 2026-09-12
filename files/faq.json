@@ -1,0 +1,52 @@
+{
+  "about": {
+    "en": [
+      "What is IES?",
+      "The International Excellence Scholarship is a programme by Copernicus Berlin. It combines an exchange semester at a German university with community engagement at Copernicus Berlin. Approximately 12 scholarships are awarded per year."
+    ],
+    "ru": [
+      "Что такое IES?",
+      "International Excellence Scholarship - программа Copernicus Berlin. Она объединяет учебный семестр в немецком вузе и волонтёрскую работу в сообществе Copernicus Berlin. В год выдаётся около 12 стипендий."
+    ]
+  },
+  "who": {
+    "en": [
+      "Who can apply?",
+      "You need to be a student (Bachelor, Master or Doctorate) at the time the scholarship starts, not older than 28 at that moment, with German or English at B1 or higher, and hold citizenship of one of 21 countries: Albania, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, China, Georgia, Kazakhstan, Kyrgyzstan, Kosovo, Moldova, Mongolia, Montenegro, Northern Macedonia, Russia, Serbia, Tajikistan, Turkmenistan, Turkey, Ukraine, Uzbekistan. All fields of study are eligible."
+    ],
+    "ru": [
+      "Кто может подать заявку?",
+      "Нужно быть студентом бакалавриата, магистратуры или аспирантуры на момент начала стипендии, быть не старше 28 лет на этот момент, иметь немецкий или английский на уровне B1 и выше и гражданство одной из 21 страны: Албания, Армения, Азербайджан, Беларусь, Босния и Герцеговина, Китай, Грузия, Казахстан, Кыргызстан, Косово, Молдова, Монголия, Черногория, Северная Македония, Россия, Сербия, Таджикистан, Туркменистан, Турция, Украина, Узбекистан. Направление обучения не ограничено."
+    ]
+  },
+  "covers": {
+    "en": [
+      "What does the scholarship cover?",
+      "Three tiers.\n\nFull Scholarship: monthly pocket money, health insurance reimbursed, and accommodation, enrollment, liability insurance, educational trips, cultural events, seminars, consulting, mentoring and workshops covered directly. Travel not covered.\n\nPartial Scholarship PLUS: the same, but health insurance is not covered.\n\nPartial Scholarship: the same as PLUS, but two months of accommodation (1,650 EUR) are paid by the participant."
+    ],
+    "ru": [
+      "Что покрывает стипендия?",
+      "Три уровня.\n\nПолная стипендия: ежемесячные выплаты, возмещение медстраховки, а также проживание, зачисление, страхование ответственности, образовательные поездки, культурные события, семинары, консультации, менторство и воркшопы — напрямую. Дорога не покрывается.\n\nЧастичная PLUS: то же самое, но медстраховка не покрывается.\n\nЧастичная: как PLUS, но два месяца проживания (1 650 EUR) платит участник."
+    ]
+  },
+  "duration": {
+    "en": [
+      "How long is the programme?",
+      "Approximately 6 months."
+    ],
+    "ru": [
+      "Какая длительность программы?",
+      "Примерно 6 месяцев."
+    ]
+  },
+  "apply": {
+    "en": [
+      "How do I apply?",
+      "Applications are submitted through the Campus platform. Registration is required."
+    ],
+    "ru": [
+      "Как подать заявку?",
+      "Заявки подаются через платформу Campus. Нужна регистрация."
+    ]
+  }
+}

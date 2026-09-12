@@ -1,0 +1,64 @@
+{
+  "countries": [
+    "Albania",
+    "Armenia",
+    "Azerbaijan",
+    "Belarus",
+    "Bosnia and Herzegovina",
+    "China",
+    "Georgia",
+    "Kazakhstan",
+    "Kosovo",
+    "Kyrgyzstan",
+    "Moldova",
+    "Mongolia",
+    "Montenegro",
+    "Northern Macedonia",
+    "Russia",
+    "Serbia",
+    "Tajikistan",
+    "Turkey",
+    "Turkmenistan",
+    "Ukraine",
+    "Uzbekistan"
+  ],
+  "order": [
+    "citizenship",
+    "age",
+    "enrolled",
+    "language"
+  ],
+  "options": {
+    "age": [
+      "under_28",
+      "28_or_older"
+    ],
+    "enrolled": [
+      "bachelor",
+      "master",
+      "phd",
+      "not_enrolled"
+    ],
+    "language": [
+      "en_b1",
+      "de_b1",
+      "both",
+      "neither"
+    ]
+  },
+  "pass": {
+    "age": [
+      "under_28"
+    ],
+    "enrolled": [
+      "bachelor",
+      "master",
+      "phd"
+    ],
+    "language": [
+      "en_b1",
+      "de_b1",
+      "both"
+    ]
+  }
+}
