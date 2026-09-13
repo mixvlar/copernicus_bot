@@ -6,6 +6,7 @@ import bot.keyboards as keyboards
 import bot.functions as funcs
 from bot.utils import logger
 from bot.configuration import database, programs, texts
+from bot.routers.user_router import ensure_subscribed
 
 programs_router = Router()
 
@@ -23,6 +24,9 @@ async def noop(call: CallbackQuery):
 async def show_program(call: CallbackQuery):
     index = int(call.data.split(":")[1]) % len(CODES)
     user = funcs.get_user(database, call.message.chat.id)
+    if not await ensure_subscribed(call.bot, call.message.chat.id, user["lang"]):
+        await call.message.delete()
+        return
     funcs.log_event(database, call.message.chat.id, "program_view", CODES[index])
     await render(call, user["lang"], index)
 

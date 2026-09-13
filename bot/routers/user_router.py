@@ -99,6 +99,37 @@ async def delete_me(message: Message):
     await message.answer(funcs.t(texts, lang, "deleted"))
 
 
+SUB_RECHECK_SECONDS = 600
+
+
+async def ensure_subscribed(bot, chat_id, lang):
+    user = funcs.get_user(database, chat_id)
+    if user is None:
+        return False
+
+    now = int(time.time())
+    if user["subscribed"] and now - user["sub_checked_at"] < SUB_RECHECK_SECONDS:
+        return True
+
+    ok = await funcs.check_subscribe(chat_id, configuration["channels_to_subscribe"], bot)
+    funcs.set_field(database, chat_id, "sub_checked_at", now)
+
+    if ok:
+        if not user["subscribed"]:
+            funcs.log_event(database, chat_id, "subscribed")
+        funcs.set_field(database, chat_id, "subscribed", 1)
+        return True
+
+    if user["subscribed"]:
+        funcs.set_field(database, chat_id, "subscribed", 0)
+        funcs.log_event(database, chat_id, "unsubscribed")
+        logger.log(level=logger.cstm_lvl["subscribe_"], msg=f"{chat_id} unsubscribed")
+
+    await bot.send_message(chat_id, funcs.t(texts, lang, "need_subscribe"),
+                           reply_markup=keyboards.keyboard_subscribe(lang))
+    return False
+
+
 async def require_subscription(bot, chat_id, lang):
     if await funcs.check_subscribe(chat_id, configuration["channels_to_subscribe"], bot):
         funcs.set_field(database, chat_id, "subscribed", 1)
@@ -110,6 +141,8 @@ async def require_subscription(bot, chat_id, lang):
 
 
 async def show_menu(bot, chat_id, lang):
+    if not await ensure_subscribed(bot, chat_id, lang):
+        return
     user = funcs.get_user(database, chat_id)
     if user and user["step"] and user["step"] != "done":
         await bot.send_message(chat_id, funcs.t(texts, lang, "resume_check"),

@@ -4,6 +4,7 @@ import bot.keyboards as keyboards
 import bot.functions as funcs
 from bot.utils import logger
 from bot.configuration import database, eligibility, texts, configuration
+from bot.routers.user_router import ensure_subscribed
 
 eligibility_router = Router()
 
@@ -13,6 +14,9 @@ ORDER = eligibility["order"]
 @eligibility_router.callback_query(F.data == "check_intro")
 async def check_intro(call: CallbackQuery):
     lang = funcs.user_lang(database, call.message.chat.id)
+    if not await ensure_subscribed(call.bot, call.message.chat.id, lang):
+        await call.message.delete()
+        return
     funcs.log_event(database, call.message.chat.id, "check_intro")
     await call.message.delete()
     await call.bot.send_message(call.message.chat.id, funcs.t(texts, lang, "check_intro"),

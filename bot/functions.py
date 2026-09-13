@@ -29,7 +29,11 @@ class Database:
             consent_at INTEGER DEFAULT 0, source TEXT DEFAULT 'direct',
             referrer_id INTEGER DEFAULT 0, referrers INTEGER DEFAULT 0,
             subscribed INTEGER DEFAULT 0, step TEXT DEFAULT '',
-            notify INTEGER DEFAULT 1, created_at INTEGER)''')
+            notify INTEGER DEFAULT 1, created_at INTEGER,
+            sub_checked_at INTEGER DEFAULT 0)''')
+        columns = [row[1] for row in self.execute("PRAGMA table_info(users)").fetchall()]
+        if "sub_checked_at" not in columns:
+            self.execute("ALTER TABLE users ADD COLUMN sub_checked_at INTEGER DEFAULT 0")
         self.execute('''CREATE TABLE IF NOT EXISTS answers(
             user_id INTEGER, question_key TEXT, answer TEXT, created_at INTEGER,
             PRIMARY KEY(user_id, question_key))''')
@@ -63,7 +67,7 @@ def log_event(database, user_id, event, meta=""):
 
 
 USER_KEYS = ("user_id", "username", "lang", "consent_at", "source", "referrer_id",
-             "referrers", "subscribed", "step", "notify", "created_at")
+             "referrers", "subscribed", "step", "notify", "created_at", "sub_checked_at")
 
 
 USER_TABLES = ("answers", "results", "questions", "events", "sent_deadlines", "user_programs")
